@@ -1,0 +1,30 @@
+{
+  "name": "גחלת",
+  "tagline": "מטבח אש ים־תיכוני",
+  "phone": "04-555-0123",
+  "whatsapp": "972500000000",
+  "email": "hello@gachelet.example",
+  "address": "רחוב המייסדים 18, זכרון יעקב",
+  "map": {
+    "lat": 32.5712,
+    "lng": 34.9526
+  },
+  "footer_text": "מסעדת שף קטנה בלב המושבה. מבשלים על עץ זית ואלון, עם מה שהחקלאים מהרמה הביאו הבוקר.",
+  "social": {
+    "instagram": "https://instagram.com/",
+    "facebook": "https://facebook.com/",
+    "tiktok": ""
+  },
+  "announcement": {
+    "enabled": true,
+    "text": "חדש: \"שולחן השף\" — ערב טעימות של 7 מנות על האש, כל יום רביעי. 12 מקומות בלבד.",
+    "link": "events.html",
+    "link_text": "לפרטים והרשמה"
+  },
+  "reservation": {
+    "min_guests": 1,
+    "max_guests": 12,
+    "large_group_note": "לקבוצות של 13 סועדים ומעלה — דברו איתנו על אירוע פרטי או סגירת מתחם.",
+    "occasions": ["ללא", "יום הולדת", "יום נישואין", "ארוחה עסקית", "הצעת נישואין", "ערב טעימות"]
+  }
+}

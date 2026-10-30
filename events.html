@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>אירועים · גחלת</title>
+  <meta name="description" content="ערבי טעימות, ערבי יקב, סדנאות ואירועים פרטיים במסעדת גחלת ובחווה.">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;700;900&family=Heebo:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="module" src="js/pages/events.js"></script>
+</head>
+<body data-page="events">
+  <a class="skip-link" href="#main">דילוג לתוכן הראשי</a>
+  <div id="site-header"></div>
+
+  <main id="main">
+    <section class="page-hero" data-source="cms:events.json › hero">
+      <div class="page-hero__bg"><img id="ev-hero-img" src="images/uploads/event-night.svg" alt=""></div>
+      <div class="container">
+        <span class="eyebrow">לוח אירועים</span>
+        <h1 id="ev-hero-title">אירועים</h1>
+        <p class="lead" id="ev-hero-subtitle"></p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section__head" style="display:flex;justify-content:space-between;align-items:end;gap:16px;max-width:none;flex-wrap:wrap">
+          <h2 style="margin:0">אירועים קרובים</h2>
+          <div class="chips" role="group" aria-label="תצוגה">
+            <button class="chip" type="button" id="only-available" aria-pressed="false">רק עם מקומות פנויים</button>
+          </div>
+        </div>
+        <div id="events-list" data-source="cms:events.json › events[]"></div>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section__head section__head--center">
+          <span class="eyebrow">חוגגים אצלנו</span>
+          <h2 id="private-title"></h2>
+          <p class="lead" id="private-text"></p>
+        </div>
+        <div class="grid grid--3" id="packages" data-source="cms:events.json › packages[]"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <details class="faq">
+          <summary>אירועים שהיו</summary>
+          <div id="past-events" style="padding-bottom:20px"></div>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+</body>
+</html>

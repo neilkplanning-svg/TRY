@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>הסיפור שלנו · גחלת</title>
+  <meta name="description" content="איך מדורה בחצר הפכה למסעדת אש בזכרון יעקב — הסיפור, הערכים והצוות של גחלת.">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;700;900&family=Heebo:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="module" src="js/pages/about.js"></script>
+</head>
+<body data-page="about">
+  <a class="skip-link" href="#main">דילוג לתוכן הראשי</a>
+  <div id="site-header"></div>
+
+  <main id="main">
+    <section class="page-hero" data-source="cms:about.json › hero">
+      <div class="page-hero__bg"><img id="about-hero-img" src="images/uploads/chef-fire.svg" alt=""></div>
+      <div class="container">
+        <span class="eyebrow">מאז 2017</span>
+        <h1 id="about-hero-title">הסיפור שלנו</h1>
+        <p class="lead" id="about-hero-subtitle"></p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container split reveal" data-source="cms:about.json › story">
+        <div>
+          <h2 id="story-title"></h2>
+          <div class="rich-text lead" id="story-body"></div>
+        </div>
+        <div class="split__media" id="story-media"></div>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="container reveal" data-source="cms:about.json › quote">
+        <blockquote class="quote-block" id="quote" style="margin:0"></blockquote>
+        <p class="muted" style="text-align:center;margin-top:16px" id="quote-author"></p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section__head section__head--center">
+          <span class="eyebrow">ציר הזמן</span>
+          <h2>מהמדורה עד החווה</h2>
+        </div>
+        <ol class="timeline" id="timeline" data-source="cms:about.json › timeline[]"></ol>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section__head"><h2 id="values-title"></h2></div>
+        <div class="grid grid--4" id="values" data-source="cms:about.json › values[]"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section__head section__head--center"><span class="eyebrow">הצוות</span><h2 id="team-title"></h2></div>
+        <div class="grid grid--4" id="team" data-source="cms:about.json › team[]"></div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+</body>
+</html>

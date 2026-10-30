@@ -1,0 +1,260 @@
+# =====================================================================
+# Pages CMS — הגדרות ממשק הניהול ללקוח (אפשרות 1)
+# תיעוד: https://pagescms.org/docs/configuration/
+#
+# כל בלוק תחת content: הוא "מסך" בממשק הניהול.
+# כל field הוא שדה שהלקוח רואה. מה שלא מופיע כאן — הלקוח לא יכול לגעת בו.
+# הקוד/העיצוב (html/css/js) לא חשופים ללקוח בכלל.
+# =====================================================================
+
+media:
+  input: images/uploads     # לאן נשמרות תמונות שהלקוח מעלה (בריפו)
+  output: images/uploads    # איך הנתיב נכתב בתוך ה-JSON (יחסי — עובד גם ב-GitHub Pages של פרויקט)
+
+content:
+  # ------------------------------------------------------------------
+  - name: settings
+    label: "⚙️ פרטי העסק והודעות"
+    type: file
+    path: content/settings.json
+    format: json
+    fields:
+      - name: name
+        label: שם המסעדה
+        type: string
+        required: true
+      - name: tagline
+        label: סלוגן קצר
+        type: string
+      - name: announcement
+        label: פס הודעה בראש האתר
+        type: object
+        fields:
+          - { name: enabled, label: "להציג את ההודעה?", type: boolean }
+          - { name: text, label: טקסט ההודעה, type: string }
+          - { name: link, label: "קישור (למשל events.html)", type: string }
+          - { name: link_text, label: טקסט הקישור, type: string }
+      - name: phone
+        label: טלפון
+        type: string
+      - name: whatsapp
+        label: "וואטסאפ להזמנות (פורמט בינלאומי, למשל 972501234567)"
+        type: string
+      - name: email
+        label: אימייל
+        type: string
+      - name: address
+        label: כתובת
+        type: string
+      - name: map
+        label: מיקום במפה
+        type: object
+        fields:
+          - { name: lat, label: קו רוחב, type: number }
+          - { name: lng, label: קו אורך, type: number }
+      - name: footer_text
+        label: טקסט בתחתית האתר
+        type: text
+      - name: social
+        label: רשתות חברתיות
+        type: object
+        fields:
+          - { name: instagram, label: אינסטגרם, type: string }
+          - { name: facebook, label: פייסבוק, type: string }
+          - { name: tiktok, label: טיקטוק, type: string }
+      - name: reservation
+        label: כללי הזמנת שולחן
+        type: object
+        fields:
+          - { name: min_guests, label: מינימום סועדים, type: number }
+          - { name: max_guests, label: מקסימום סועדים בטופס, type: number }
+          - { name: large_group_note, label: הודעה לקבוצות גדולות, type: text }
+          - { name: occasions, label: סוגי אירועים לבחירה, type: string, list: true }
+
+  # ------------------------------------------------------------------
+  - name: home
+    label: "🏠 דף הבית"
+    type: file
+    path: content/home.json
+    format: json
+    fields:
+      - name: hero
+        label: באנר ראשי
+        type: object
+        fields:
+          - { name: eyebrow, label: שורה קטנה מעל הכותרת, type: string }
+          - { name: title, label: כותרת ראשית, type: string, required: true }
+          - { name: subtitle, label: טקסט משנה, type: text }
+          - { name: image, label: תמונת רקע, type: image }
+          - { name: cta_primary, label: טקסט כפתור ראשי, type: string }
+          - { name: cta_secondary, label: טקסט כפתור משני, type: string }
+      - name: intro
+        label: פסקת "הפילוסופיה"
+        type: object
+        fields:
+          - { name: eyebrow, label: כותרת קטנה, type: string }
+          - { name: title, label: כותרת, type: string }
+          - { name: body, label: טקסט, type: rich-text }
+          - { name: image, label: תמונה, type: image }
+          - { name: link_text, label: טקסט קישור, type: string }
+      - name: signature_title
+        label: כותרת אזור המנות
+        type: string
+      - name: signature
+        label: מנות דגל (כרטיסיות)
+        type: object
+        list: { min: 1, max: 8 }
+        fields:
+          - { name: name, label: שם המנה, type: string, required: true }
+          - { name: description, label: תיאור, type: text }
+          - { name: image, label: תמונה, type: image }
+      - name: stats
+        label: מספרים
+        type: object
+        list: { max: 4 }
+        fields:
+          - { name: value, label: "ערך (למשל 620°)", type: string }
+          - { name: label, label: תיאור, type: string }
+      - name: cta
+        label: קריאה לפעולה בתחתית
+        type: object
+        fields:
+          - { name: title, label: כותרת, type: string }
+          - { name: text, label: טקסט, type: text }
+          - { name: button, label: טקסט כפתור, type: string }
+
+  # ------------------------------------------------------------------
+  - name: about
+    label: "📖 הסיפור שלנו"
+    type: file
+    path: content/about.json
+    format: json
+    fields:
+      - { name: hero_title, label: כותרת העמוד, type: string }
+      - { name: hero_subtitle, label: תת־כותרת, type: text }
+      - { name: hero_image, label: תמונת רקע, type: image }
+      - { name: story_title, label: כותרת הסיפור, type: string }
+      - { name: story, label: הסיפור, type: rich-text }
+      - { name: story_image, label: תמונה לסיפור, type: image }
+      - { name: quote, label: ציטוט, type: text }
+      - { name: quote_author, label: מי אמר, type: string }
+      - name: timeline
+        label: ציר זמן
+        type: object
+        list: true
+        fields:
+          - { name: year, label: שנה, type: string }
+          - { name: title, label: כותרת, type: string }
+          - { name: text, label: טקסט, type: text }
+      - { name: values_title, label: כותרת אזור הערכים, type: string }
+      - name: values
+        label: ערכים
+        type: object
+        list: { max: 8 }
+        fields:
+          - { name: title, label: כותרת, type: string }
+          - { name: text, label: טקסט, type: text }
+      - { name: team_title, label: כותרת אזור הצוות, type: string }
+      - name: team
+        label: הצוות
+        type: object
+        list: true
+        fields:
+          - { name: name, label: שם, type: string, required: true }
+          - { name: role, label: תפקיד, type: string }
+          - { name: bio, label: כמה מילים, type: text }
+          - { name: photo, label: "תמונה (אם ריק — יוצגו ראשי תיבות)", type: image }
+
+  # ------------------------------------------------------------------
+  - name: events
+    label: "🎉 אירועים"
+    type: file
+    path: content/events.json
+    format: json
+    fields:
+      - { name: hero_title, label: כותרת העמוד, type: string }
+      - { name: hero_subtitle, label: תת־כותרת, type: text }
+      - { name: hero_image, label: תמונת רקע, type: image }
+      - name: events
+        label: רשימת אירועים
+        description: אירועים שתאריכם עבר עוברים אוטומטית ל"אירועים שהיו".
+        type: object
+        list: true
+        fields:
+          - { name: title, label: שם האירוע, type: string, required: true }
+          - { name: date, label: תאריך, type: date, required: true, options: { format: "yyyy-MM-dd" } }
+          - { name: time, label: "שעה (למשל 20:00)", type: string }
+          - { name: price, label: מחיר לאדם, type: number }
+          - { name: seats, label: "מקומות (טקסט חופשי)", type: string }
+          - { name: description, label: תיאור, type: text }
+          - { name: image, label: תמונה, type: image }
+          - { name: featured, label: "להדגיש כמומלץ?", type: boolean }
+          - { name: sold_out, label: "אזלו המקומות?", type: boolean }
+      - { name: private_title, label: כותרת אירועים פרטיים, type: string }
+      - { name: private_text, label: טקסט אירועים פרטיים, type: text }
+      - name: packages
+        label: חבילות לאירועים פרטיים
+        type: object
+        list: { max: 4 }
+        fields:
+          - { name: name, label: שם החבילה, type: string }
+          - { name: guests, label: "כמות אורחים (טקסט)", type: string }
+          - { name: price_per_person, label: מחיר לאדם, type: number }
+          - { name: featured, label: "להדגיש?", type: boolean }
+          - { name: features, label: מה כלול, type: string, list: true }
+
+  # ------------------------------------------------------------------
+  - name: gallery
+    label: "🖼️ גלריה"
+    type: file
+    path: content/gallery.json
+    format: json
+    fields:
+      - { name: hero_title, label: כותרת העמוד, type: string }
+      - { name: hero_subtitle, label: תת־כותרת, type: string }
+      - name: categories
+        label: קטגוריות לסינון
+        type: string
+        list: true
+      - name: images
+        label: תמונות
+        type: object
+        list: true
+        fields:
+          - { name: image, label: תמונה, type: image, required: true }
+          - { name: caption, label: כיתוב, type: string }
+          - { name: category, label: "קטגוריה (אחת מהרשימה למעלה)", type: string }
+
+  # ------------------------------------------------------------------
+  - name: testimonials
+    label: "⭐ ביקורות"
+    type: file
+    path: content/testimonials.json
+    format: json
+    fields:
+      - { name: title, label: כותרת, type: string }
+      - name: items
+        label: ביקורות
+        type: object
+        list: true
+        fields:
+          - { name: quote, label: הביקורת, type: text, required: true }
+          - { name: name, label: שם, type: string }
+          - { name: source, label: "מקור (Google / Instagram…)", type: string }
+          - { name: rating, label: דירוג, type: select, options: { values: [5, 4, 3] } }
+
+  # ------------------------------------------------------------------
+  - name: faq
+    label: "❓ שאלות נפוצות"
+    type: file
+    path: content/faq.json
+    format: json
+    fields:
+      - { name: title, label: כותרת, type: string }
+      - name: items
+        label: שאלות
+        type: object
+        list: true
+        fields:
+          - { name: question, label: שאלה, type: string, required: true }
+          - { name: answer, label: תשובה, type: rich-text }

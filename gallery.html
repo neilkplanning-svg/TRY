@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>גלריה · גחלת</title>
+  <meta name="description" content="תמונות מהמטבח, מהשולחן ומהחווה של גחלת.">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;700;900&family=Heebo:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="module" src="js/pages/gallery.js"></script>
+</head>
+<body data-page="gallery">
+  <a class="skip-link" href="#main">דילוג לתוכן הראשי</a>
+  <div id="site-header"></div>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="page-hero__bg"><img src="images/uploads/interior.svg" alt=""></div>
+      <div class="container">
+        <h1 id="gal-title">גלריה</h1>
+        <p class="lead" id="gal-subtitle"></p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:40px">
+      <div class="container">
+        <div class="chips" role="group" aria-label="סינון לפי קטגוריה" id="gal-filters" style="margin-bottom:28px"></div>
+        <div class="masonry" id="gallery" data-source="cms:gallery.json › images[]"></div>
+      </div>
+    </section>
+  </main>
+
+  <dialog class="lightbox" id="lightbox" aria-label="תצוגת תמונה">
+    <div class="lightbox__inner">
+      <figure style="margin:0;display:grid;place-items:center">
+        <img id="lb-img" src="" alt="">
+        <figcaption class="lightbox__cap" id="lb-cap"></figcaption>
+      </figure>
+    </div>
+    <button class="icon-btn lightbox__close" type="button" id="lb-close" aria-label="סגירה">✕</button>
+    <button class="icon-btn lightbox__btn lightbox__btn--prev" type="button" id="lb-prev" aria-label="התמונה הקודמת">→</button>
+    <button class="icon-btn lightbox__btn lightbox__btn--next" type="button" id="lb-next" aria-label="התמונה הבאה">←</button>
+  </dialog>
+
+  <div id="site-footer"></div>
+</body>
+</html>

@@ -1,0 +1,98 @@
+{
+  "hero_title": "ערבים מיוחדים סביב האש",
+  "hero_subtitle": "ערבי טעימות, סדנאות ושיתופי פעולה עם יקבים ושפים אורחים. מספר המקומות בכל ערב מוגבל.",
+  "hero_image": "images/uploads/event-night.svg",
+  "events": [
+    {
+      "title": "שולחן השף — 7 מנות על האש",
+      "date": "2026-11-04",
+      "time": "20:00",
+      "price": 340,
+      "seats": "12 מקומות",
+      "description": "ערב טעימות בדלפק מול הטאבון. נועה מבשלת מולכם ומספרת על כל מנה ועל מי שגידל אותה. כולל צימוד יינות.",
+      "image": "images/uploads/chef-fire.svg",
+      "featured": true,
+      "sold_out": true
+    },
+    {
+      "title": "ערב יקב: כרמי הרמה × גחלת",
+      "date": "2026-11-12",
+      "time": "19:30",
+      "price": 290,
+      "seats": "40 מקומות",
+      "description": "חמש מנות, חמישה יינות, כורם אחד שלא מפסיק לספר סיפורים. כולל טעימה מחבית של בציר 2025.",
+      "image": "images/uploads/wine.svg",
+      "featured": true,
+      "sold_out": false
+    },
+    {
+      "title": "סדנת מחמצת וטאבון",
+      "date": "2026-11-20",
+      "time": "10:00",
+      "price": 220,
+      "seats": "10 משתתפים",
+      "description": "שלוש שעות עם ג'מיל: מזינים מחמצת, לשים, אופים בטאבון — וחוזרים הביתה עם צנצנת מהמחמצת בת ה-9.",
+      "image": "images/uploads/dish-bread.svg",
+      "featured": false,
+      "sold_out": false
+    },
+    {
+      "title": "שף אורח: מטבח הגליל עם השף סאמר",
+      "date": "2026-12-03",
+      "time": "20:00",
+      "price": 360,
+      "seats": "40 מקומות",
+      "description": "ערב משותף עם שף אורח מהגליל המערבי — עשבי בר, כבש מעושן ופריקה מהגחלים.",
+      "image": "images/uploads/dish-mezze.svg",
+      "featured": true,
+      "sold_out": false
+    },
+    {
+      "title": "מסיבת מסיק",
+      "date": "2026-12-18",
+      "time": "12:00",
+      "price": 180,
+      "seats": "60 מקומות",
+      "description": "קוטפים יחד זיתים בחווה, כובשים, ואחר כך ארוחת צהריים ארוכה על הדשא. מתאים למשפחות.",
+      "image": "images/uploads/olive-branch.svg",
+      "featured": false,
+      "sold_out": false
+    },
+    {
+      "title": "ערב סוכות בחווה",
+      "date": "2026-10-01",
+      "time": "19:00",
+      "price": 260,
+      "seats": "50 מקומות",
+      "description": "ארוחה בסוכה בחווה, עם ירקות שנקטפו באותו בוקר.",
+      "image": "images/uploads/market.svg",
+      "featured": false,
+      "sold_out": true
+    }
+  ],
+  "private_title": "אירועים פרטיים",
+  "private_text": "ימי הולדת, אירועי חברה וחתונות קטנות — עד 60 אורחים במסעדה או עד 120 בחווה.",
+  "packages": [
+    {
+      "name": "השולחן הארוך",
+      "guests": "12–24 אורחים",
+      "price_per_person": 260,
+      "featured": false,
+      "features": ["תפריט משותף של 5 מנות", "שולחן העץ הארוך בבלעדיות", "בקבוק יין לכל 3 אורחים"]
+    },
+    {
+      "name": "המסעדה כולה",
+      "guests": "עד 60 אורחים",
+      "price_per_person": 380,
+      "featured": true,
+      "features": ["סגירת המסעדה לערב שלם", "תפריט טעימות מותאם אישית", "צימוד יינות מלא", "עמדת טאבון חיה"]
+    },
+    {
+      "name": "ערב בחווה",
+      "guests": "40–120 אורחים",
+      "price_per_person": 420,
+      "featured": false,
+      "features": ["אירוע תחת כיפת השמיים במורדות הכרמל", "מדורות בישול פתוחות", "סיור בגינה וקטיף", "הסעות מהמסעדה"]
+    }
+  ]
+}

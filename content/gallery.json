@@ -1,0 +1,19 @@
+{
+  "hero_title": "גלריה",
+  "hero_subtitle": "רגעים מהמטבח, מהשולחן ומהחווה.",
+  "categories": ["אוכל", "המקום", "אירועים", "החווה"],
+  "images": [
+    { "image": "images/uploads/dish-lamb.svg", "caption": "כתף טלה אחרי 14 שעות במעשנה", "category": "אוכל" },
+    { "image": "images/uploads/interior.svg", "caption": "השולחן הארוך, חמש דקות לפני הפתיחה", "category": "המקום" },
+    { "image": "images/uploads/dish-eggplant.svg", "caption": "חציל מהגחלים עם טחינה גולמית ורימונים", "category": "אוכל" },
+    { "image": "images/uploads/event-night.svg", "caption": "ערב יקב בחורף 2025", "category": "אירועים" },
+    { "image": "images/uploads/market.svg", "caption": "הבוקר אצל החקלאים בבת שלמה", "category": "החווה" },
+    { "image": "images/uploads/dish-fish.svg", "caption": "לוקוס שלם מהטאבון", "category": "אוכל" },
+    { "image": "images/uploads/chef-fire.svg", "caption": "עומר והמחבת הכבדה", "category": "המקום" },
+    { "image": "images/uploads/dish-dessert.svg", "caption": "טארט תאנים וקרם פרש", "category": "אוכל" },
+    { "image": "images/uploads/olive-branch.svg", "caption": "עונת המסיק בחווה", "category": "החווה" },
+    { "image": "images/uploads/wine.svg", "caption": "מהמרתף: 212 תוויות ישראליות", "category": "המקום" },
+    { "image": "images/uploads/dish-mezze.svg", "caption": "פתיחה לשולחן: חמישה מטבלים", "category": "אוכל" },
+    { "image": "images/uploads/dish-bread.svg", "caption": "פוקאצ'ה יוצאת מהטאבון", "category": "אוכל" }
+  ]
+}

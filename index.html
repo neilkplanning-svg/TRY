@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>גחלת · מטבח אש ים־תיכוני בזכרון יעקב</title>
+  <meta name="description" content="מסעדת שף בזכרון יעקב שמבשלת רק על אש חיה — טאבון, גריל ומעשנה, עם חומרי גלם מחקלאים מקומיים.">
+  <meta property="og:title" content="גחלת · מטבח אש ים־תיכוני">
+  <meta property="og:image" content="images/uploads/hero.svg">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;700;900&family=Heebo:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="module" src="js/pages/home.js"></script>
+  <!-- נתונים מובנים לגוגל (SEO מקומי). מעדכנים ידנית או בעתיד דרך build. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "גחלת",
+    "servesCuisine": ["ים תיכוני", "ישראלי"],
+    "priceRange": "₪₪₪",
+    "telephone": "+972-4-555-0123",
+    "address": { "@type": "PostalAddress", "streetAddress": "רחוב המייסדים 18", "addressLocality": "זכרון יעקב", "addressCountry": "IL" },
+    "geo": { "@type": "GeoCoordinates", "latitude": 32.5712, "longitude": 34.9526 },
+    "menu": "menu.html",
+    "acceptsReservations": true
+  }
+  </script>
+</head>
+<body data-page="home">
+  <a class="skip-link" href="#main">דילוג לתוכן הראשי</a>
+  <div id="site-header"></div>
+
+  <main id="main">
+    <!-- Hero — Pages CMS: content/home.json › hero -->
+    <section class="hero" id="hero" data-source="cms:home.json › hero">
+      <div class="hero__media"><img id="hero-img" src="images/uploads/hero.svg" alt="" fetchpriority="high"></div>
+      <div class="container hero__content">
+        <span class="eyebrow" id="hero-eyebrow"></span>
+        <h1 id="hero-title">גחלת</h1>
+        <p id="hero-subtitle"></p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="contact.html" id="hero-cta1">להזמנת שולחן</a>
+          <a class="btn btn--ghost" href="menu.html" id="hero-cta2">לתפריט המלא</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Today's specials — Google Sheets: לשונית "מנות היום" -->
+    <div class="container">
+      <section class="specials" aria-labelledby="specials-title" data-source="sheets:מנות היום">
+        <div>
+          <div class="specials__title" id="specials-title">היום על הגחלים<small id="specials-note">טוען מהלוח…</small></div>
+        </div>
+        <div class="specials__list" id="specials-list">
+          <div class="special skeleton" style="height:90px"></div>
+          <div class="special skeleton" style="height:90px"></div>
+          <div class="special skeleton" style="height:90px"></div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Intro — Pages CMS: content/home.json › intro -->
+    <section class="section">
+      <div class="container split reveal" data-source="cms:home.json › intro">
+        <div>
+          <span class="eyebrow" id="intro-eyebrow"></span>
+          <h2 id="intro-title"></h2>
+          <div class="rich-text lead" id="intro-body"></div>
+          <a class="btn btn--ghost" href="about.html" id="intro-link" style="margin-top:20px">לסיפור המלא שלנו</a>
+        </div>
+        <div class="split__media" id="intro-media"></div>
+      </div>
+    </section>
+
+    <!-- Signature dishes — Pages CMS: list -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">מהמטבח</span>
+          <h2 id="signature-title">המנות שלנו</h2>
+        </div>
+        <div class="grid grid--4" id="signature-grid" data-source="cms:home.json › signature[]"></div>
+      </div>
+    </section>
+
+    <!-- Stats — Pages CMS -->
+    <section class="section">
+      <div class="container">
+        <div class="stats reveal" id="stats" data-source="cms:home.json › stats[]"></div>
+      </div>
+    </section>
+
+    <!-- Testimonials — Pages CMS: content/testimonials.json -->
+    <section class="section section--alt" aria-labelledby="testimonials-title">
+      <div class="container">
+        <div class="section__head section__head--center">
+          <span class="eyebrow">ביקורות</span>
+          <h2 id="testimonials-title">מה אומרים עלינו</h2>
+        </div>
+        <div class="slider reveal" id="testimonials" data-source="cms:testimonials.json" aria-roledescription="קרוסלה"></div>
+      </div>
+    </section>
+
+    <!-- Events (CMS) + Hours (Sheets) -->
+    <section class="section">
+      <div class="container grid grid--2" style="gap:48px">
+        <div class="reveal" data-source="cms:events.json › events[]">
+          <span class="eyebrow">בקרוב</span>
+          <h2>ערבים מיוחדים</h2>
+          <div id="events-mini"></div>
+          <a class="btn btn--ghost" href="events.html" style="margin-top:20px">לכל האירועים</a>
+        </div>
+        <div class="reveal" data-source="sheets:שעות פתיחה">
+          <span class="eyebrow">שעות פתיחה</span>
+          <h2>מתי מדליקים את האש</h2>
+          <p><span class="status-pill" id="home-status">בודקים…</span></p>
+          <ul class="hours" id="home-hours"></ul>
+          <p class="data-note" id="hours-note"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery strip — Pages CMS: content/gallery.json -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">גלריה</span>
+          <h2>מבט מבפנים</h2>
+        </div>
+        <div class="grid grid--3" id="gallery-strip" data-source="cms:gallery.json › images[]"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta-band reveal" data-source="cms:home.json › cta">
+          <div>
+            <h2 id="cta-title"></h2>
+            <p class="lead" id="cta-text" style="margin:0"></p>
+          </div>
+          <a class="btn btn--primary" href="contact.html" id="cta-btn">להזמנת שולחן</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>תפריט · גחלת</title>
+  <meta name="description" content="התפריט של גחלת — מנות מהגחלים, מהטאבון ומהמעשנה, מנות היום ותפריט יינות ישראליים.">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;700;900&family=Heebo:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="module" src="js/pages/menu.js"></script>
+</head>
+<body data-page="menu">
+  <a class="skip-link" href="#main">דילוג לתוכן הראשי</a>
+  <div id="site-header"></div>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="page-hero__bg"><img src="images/uploads/dish-mezze.svg" alt=""></div>
+      <div class="container">
+        <span class="eyebrow">משתנה כמעט כל יום</span>
+        <h1>התפריט</h1>
+        <p class="lead">המחירים, המנות והזמינות מתעדכנים ישירות מהגיליון של המטבח.</p>
+        <p class="data-note" id="menu-note" data-source="sheets:תפריט"><span class="data-note__dot"></span>טוען תפריט…</p>
+      </div>
+    </section>
+
+    <div class="menu-tools">
+      <div class="container">
+        <div class="menu-tools__row">
+          <label class="menu-search">
+            <span aria-hidden="true">⌕</span>
+            <span class="visually-hidden">חיפוש בתפריט</span>
+            <input type="search" id="menu-search" placeholder="חיפוש מנה או מרכיב…" autocomplete="off">
+          </label>
+          <div class="chips" role="group" aria-label="סינון לפי העדפה" id="menu-filters">
+            <button class="chip" type="button" data-filter="vegan" aria-pressed="false">טבעוני</button>
+            <button class="chip" type="button" data-filter="veg" aria-pressed="false">צמחוני</button>
+            <button class="chip" type="button" data-filter="gf" aria-pressed="false">ללא גלוטן</button>
+            <button class="chip" type="button" data-filter="spicy" aria-pressed="false">חריף</button>
+            <button class="chip" type="button" data-filter="chef" aria-pressed="false">המלצת השף</button>
+            <button class="chip" type="button" id="toggle-soldout" aria-pressed="false">הסתרת מנות שאזלו</button>
+          </div>
+          <button class="btn btn--ghost btn--sm no-print" type="button" onclick="window.print()">הדפסה</button>
+        </div>
+        <nav class="cat-nav" id="cat-nav" aria-label="קטגוריות בתפריט"></nav>
+      </div>
+    </div>
+
+    <section class="section" style="padding-top:48px">
+      <div class="container menu-layout">
+        <div>
+          <div id="menu-list" data-source="sheets:תפריט" aria-live="polite">
+            <div class="skeleton" style="height:28px;width:40%;margin-bottom:24px"></div>
+            <div class="skeleton" style="height:70px;margin-bottom:12px"></div>
+            <div class="skeleton" style="height:70px;margin-bottom:12px"></div>
+            <div class="skeleton" style="height:70px;margin-bottom:12px"></div>
+          </div>
+
+          <section class="menu-cat" id="wine" aria-labelledby="wine-title" data-source="sheets:יינות">
+            <h2 class="menu-cat__title" id="wine-title">יינות <span>כוס / בקבוק</span></h2>
+            <table class="wine-table">
+              <thead><tr><th scope="col">יין</th><th scope="col">יקב · אזור</th><th scope="col">כוס</th><th scope="col">בקבוק</th></tr></thead>
+              <tbody id="wine-body"></tbody>
+            </table>
+          </section>
+        </div>
+
+        <aside>
+          <div class="aside-card" data-source="sheets:מנות היום">
+            <span class="eyebrow">מחוץ לתפריט</span>
+            <h3>היום על הגחלים</h3>
+            <div id="menu-specials"></div>
+          </div>
+          <div class="aside-card" data-source="sheets:שעות פתיחה">
+            <h3>שעות פתיחה</h3>
+            <p><span class="status-pill" id="menu-status">…</span></p>
+            <ul class="hours" id="menu-hours"></ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+</body>
+</html>

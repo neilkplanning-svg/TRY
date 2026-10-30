@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>הזמנת שולחן וצור קשר · גחלת</title>
+  <meta name="description" content="הזמנת שולחן במסעדת גחלת, שעות פתיחה, הגעה ושאלות נפוצות.">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;700;900&family=Heebo:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="module" src="js/pages/contact.js"></script>
+</head>
+<body data-page="contact">
+  <a class="skip-link" href="#main">דילוג לתוכן הראשי</a>
+  <div id="site-header"></div>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="page-hero__bg"><img src="images/uploads/interior.svg" alt=""></div>
+      <div class="container">
+        <span class="eyebrow">נשמח לראות אתכם</span>
+        <h1>הזמנת שולחן</h1>
+        <p class="lead">ממלאים את הפרטים — והבקשה נשלחת אלינו ישירות בוואטסאפ. נאשר תוך שעה בשעות הפעילות.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container split" style="align-items:start">
+        <div class="card" style="padding:clamp(20px,4vw,36px)">
+          <h2 style="font-size:1.7rem">פרטי ההזמנה</h2>
+          <form class="form" id="reservation" novalidate>
+            <div class="field">
+              <label for="r-name">שם מלא *</label>
+              <input id="r-name" name="name" autocomplete="name" required>
+              <span class="field__error" aria-live="polite"></span>
+            </div>
+            <div class="field">
+              <label for="r-phone">טלפון *</label>
+              <input id="r-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" dir="ltr" required pattern="0[0-9\-\s]{8,11}">
+              <span class="field__error" aria-live="polite"></span>
+            </div>
+            <div class="field">
+              <label for="r-date">תאריך *</label>
+              <input id="r-date" name="date" type="date" required>
+              <span class="field__error" aria-live="polite"></span>
+            </div>
+            <div class="field">
+              <label for="r-time">שעה *</label>
+              <select id="r-time" name="time" required></select>
+              <span class="field__error" aria-live="polite"></span>
+            </div>
+            <div class="field">
+              <label for="r-guests">מספר סועדים *</label>
+              <input id="r-guests" name="guests" type="number" min="1" max="12" value="2" required>
+              <span class="field__error" aria-live="polite"></span>
+            </div>
+            <div class="field">
+              <label for="r-occasion">אירוע מיוחד?</label>
+              <select id="r-occasion" name="occasion"></select>
+            </div>
+            <div class="field field--full">
+              <label for="r-notes">הערות (אלרגיות, ישיבה מועדפת, אירוע)</label>
+              <textarea id="r-notes" name="notes"></textarea>
+            </div>
+            <div class="form__actions">
+              <button class="btn btn--primary" type="submit">שליחה בוואטסאפ</button>
+              <button class="btn btn--ghost" type="button" id="send-email">או במייל</button>
+              <span class="muted" id="form-status" role="status"></span>
+            </div>
+          </form>
+        </div>
+
+        <div>
+          <div class="card" style="padding:28px;margin-bottom:24px" data-source="sheets:שעות פתיחה">
+            <h2 style="font-size:1.5rem">שעות פתיחה</h2>
+            <p><span class="status-pill" id="contact-status">…</span></p>
+            <ul class="hours" id="contact-hours"></ul>
+          </div>
+          <div class="card" style="padding:28px" data-source="cms:settings.json">
+            <h2 style="font-size:1.5rem">איך מגיעים</h2>
+            <p id="contact-address"></p>
+            <p><a id="contact-phone" dir="ltr"></a> · <a id="contact-email"></a></p>
+            <iframe class="map-frame" id="map" title="מפת הגעה למסעדה" loading="lazy"></iframe>
+            <p style="margin-top:12px"><a id="waze-link" target="_blank" rel="noopener">ניווט עם Waze ←</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="container" style="max-width:820px">
+        <h2 id="faq-title">שאלות נפוצות</h2>
+        <div class="faq" id="faq" data-source="cms:faq.json › items[]"></div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+</body>
+</html>
